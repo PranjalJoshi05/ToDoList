@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>To Do List</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="box" id="heading">
+    <h1><%= kindOfDay %></h1>
+  </div>
+
+  <div class="box">
+
+    <% for (var i =1; i <=items.length;  i++ ) { %>
+    <div class="item">
+      <input type="checkbox">
+      <div style="width:264.33px">
+        <p><%=items[i-1]%></p>
+      </div>
+      <form action="/delete" method="post">
+        <button type="submit" name="index" value=<%=i-1%> >-</button>
+      </form>
+    </div>
+    <% } %>
+
+    <form class="item" action="/" method="post">
+      <input type="text" name="newItem" placeholder="New item" autocomplete="off" autofocus>
+      <button type="submit">+</button>
+    </form>
+  </div>
+
+
+</body>
+
+<footer>
+  Created by Pranjal Joshi
+</footer>
+
+</html>
